@@ -33,6 +33,8 @@ Game.prototype.winner = function() {
     case this.player1.chice === 'scissors' && player2.choice === 'rock':
       return this.player2;
     default:
-      break;
+      console.log('test');
+      console.log(this.player1);
+      console.log(this.player2);
     }
   };
