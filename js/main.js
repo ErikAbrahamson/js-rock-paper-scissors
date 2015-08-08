@@ -6,8 +6,8 @@
 */
 
 function Game(player1, player2) {
-  this.player1 = new Player(player1);
-  this.player2 = new Player(player2);
+  this.player1 = player1;
+  this.player2 = player2;
 }
 
 function Player(name) {
@@ -20,21 +20,25 @@ Player.prototype.picks = function(choice) {
 
 Game.prototype.winner = function() {
   switch(true) {
-    case this.player1.choice === 'rock' && player2.choice === 'paper':
+    case this.player1.choice === 'rock' && this.player2.choice === 'scissors':
       return this.player1;
-    case this.player1.choice === 'rock' && player2.choice === 'paper':
+    case this.player1.choice === 'rock' && this.player2.choice === 'paper':
       return this.player2;
-    case this.player1.choice === 'paper' && player2.choice === 'rock':
+    case this.player1.choice === 'paper' && this.player2.choice === 'rock':
       return this.player1;
-    case this.player1.choice === 'paper' && player2.choice === 'scissors':
+    case this.player1.choice === 'paper' && this.player2.choice === 'scissors':
       return this.player2;
-    case this.player1.choice === 'scissors' && player2.choice === 'scissors':
+    case this.player1.choice === 'scissors' && this.player2.choice === 'paper':
       return this.player1;
-    case this.player1.chice === 'scissors' && player2.choice === 'rock':
+    case this.player1.chice === 'scissors' && this.player2.choice === 'rock':
       return this.player2;
-    default:
-      console.log('test');
-      console.log(this.player1);
-      console.log(this.player2);
     }
+    if (this.player1.choice === this.player2.choice) {
+      return null;
+    }
+  };
+
+  module.exports = {
+    Game: Game,
+    Player: Player
   };
