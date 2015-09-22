@@ -11,17 +11,20 @@
   <body>
 
     <div class="container">
+      <h1>RPS!</h1>
       <div ng-controller="myController">
         <input ng-model="players.player1.choice" type="text" placeholder="Make a choice!"></input>
-        <button type="submit" ng-click="computerChoice(); winConditions()">Play!</button>
-        <p>Player Choice: {{players.player1.choice}}</p>
-        <p>Computer Choice: {{players. player2.choice}}</p>
+        <button class="btn btn-success" type="submit" ng-click="computerChoice(); winConditions()">Play!</button>
+        <p>Player Choice: <strong>{{players.player1.choice}}</strong></p>
+        <p>Computer Choice: <strong>{{players. player2.choice}}</strong></p>
+
         <div>
-          <p>Wins: {{players.player1.score}}</p>
-          <p>Loses: {{players.player2.score}}</p>
+          <p>Wins: <strong class="win">{{players.player1.score}}</strong></p>
+          <p>Loses: <strong class="lose">{{players.player2.score}}</strong></p>
           <p ng-show="players.player1.tie">It's a tie!</p>
         </div>
-        <button type="submit" ng-click="init()">Reset Scores</button>
+
+        <button class="btn btn-generic type="submit" ng-click="init()">Reset Scores</button>
       </div>
     </div>
 

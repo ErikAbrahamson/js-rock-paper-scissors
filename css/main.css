@@ -1,0 +1,28 @@
+body {
+  background-color: black;
+  background-image: url(../img/rps.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.container {
+  background-color: rgba(180,180,125,0.4);
+  width: 30%;
+  border-top-left-radius: 29%;
+  border-top-right-radius: 29%;
+}
+h1 {
+  color: white;
+}
+p {
+  color: white;
+  font-size: 24px;
+}
+.win {
+  color: green;
+}
+.lose {
+  color: red;
+}
